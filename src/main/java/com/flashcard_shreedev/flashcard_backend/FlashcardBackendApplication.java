@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class FlashcardBackendApplication {
-
+	//Entry point of the application
 	public static void main(String[] args) {
 		SpringApplication.run(FlashcardBackendApplication.class, args);
 	}
