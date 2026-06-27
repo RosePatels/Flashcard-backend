@@ -23,6 +23,9 @@ public class Flashcard {
     @Column(name = "category", nullable = false)
     private String category;
 
+    @Column(name = "mastery_progress", nullable = false)
+    private Integer masteryProgress;
+
     // Getters and Setters
     public Integer getId() {
         return id;
@@ -54,5 +57,13 @@ public class Flashcard {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Integer getMasteryProgress() {
+        return masteryProgress;
+    }
+
+    public void setMasteryProgress(Integer masteryProgress) {
+        this.masteryProgress = masteryProgress;
     }
 }

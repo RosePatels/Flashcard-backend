@@ -36,6 +36,7 @@ public class FlashcardController {
             flashcardDto.setQuestion(fc.getQuestion());
             flashcardDto.setAnswer(fc.getAnswer());
             flashcardDto.setCategory(fc.getCategory());
+            flashcardDto.setMasteryProgress(fc.getMasteryProgress());
             return flashcardDto;
         }).toList();
     }
@@ -50,6 +51,7 @@ public class FlashcardController {
         flashcard.setQuestion(flashcardDto.getQuestion());
         flashcard.setAnswer(flashcardDto.getAnswer());
         flashcard.setCategory(flashcardDto.getCategory());
+        flashcard.setMasteryProgress(flashcardDto.getMasteryProgress() != null ? flashcardDto.getMasteryProgress() : 0); // Default to 0 if not provided
         return ResponseEntity.ok(flashcardRepository.save(flashcard));
     }
 
@@ -67,6 +69,7 @@ public class FlashcardController {
         flashcard.setQuestion(flashcardDto.getQuestion());
         flashcard.setAnswer(flashcardDto.getAnswer());
         flashcard.setCategory(flashcardDto.getCategory());
+        flashcard.setMasteryProgress(flashcardDto.getMasteryProgress() != null ? flashcardDto.getMasteryProgress() : flashcard.getMasteryProgress()); // Keep existing value if not provided
         return ResponseEntity.ok(flashcardRepository.save(flashcard));
     }
 
